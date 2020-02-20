@@ -25,7 +25,7 @@ Which libraries, tools, and technology will you use?
 
 Scikit learn
 
-stats models: logistic regression
+stats models: logistic regression https://www.statsmodels.org/stable/regression.html
 
 Python/pandas
 
