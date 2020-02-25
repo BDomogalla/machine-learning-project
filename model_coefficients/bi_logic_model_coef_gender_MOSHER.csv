@@ -1,0 +1,71 @@
+Deviance,Residuals:,,,,
+Min,1Q,Median,3Q,Max,
+-2.5654,-0.5136,-0.1338,0.432,2.936,
+,,,,,
+Coefficients:,,,,,
+,Estimate,Std. Error,z value,Pr(>|z|),
+(Intercept),3.87571,2.07142,1.871,0.06134,.
+Daily_events,0.11979,0.11846,1.011,0.31189,
+Prioritising_workload,0.21882,0.13246,1.652,0.09854,.
+Writing_notes,-0.34495,0.10199,-3.382,0.00072,***
+Workaholism,-0.18753,0.12271,-1.528,0.12645,
+Thinking_ahead,0.04518,0.1327,0.34,0.73352,
+Final_judgement,0.02983,0.10795,0.276,0.78228,
+Reliability,-0.30411,0.15236,-1.996,0.04593,*
+Keeping_promises,0.26206,0.16098,1.628,0.10354,
+Loss_of_interest,-0.06427,0.10147,-0.633,0.52652,
+Friends_versus_money,-0.17578,0.12291,-1.43,0.15267,
+Funniness,0.67459,0.1268,5.32,1.04E-07,***
+Fake,-0.11089,0.139,-0.798,0.425,
+Criminal_damage,0.42006,0.0924,4.546,5.47E-06,***
+Decision_making,-0.02096,0.12285,-0.171,0.86456,
+Elections,0.11247,0.08543,1.317,0.18801,
+Self_criticism,-0.04433,0.1265,-0.35,0.72599,
+Judgment_calls,-0.17171,0.13905,-1.235,0.21686,
+Hypochondria,-0.23356,0.12949,-1.804,0.07129,.
+Empathy,-0.23397,0.12157,-1.925,0.05428,.
+Eating_to_survive,0.36463,0.11352,3.212,0.00132,**
+Giving,-0.24721,0.1103,-2.241,0.02501,*
+Compassion_to_animals,-0.27171,0.11395,-2.384,0.0171,*
+Borrowed_stuff,0.19772,0.12913,1.531,0.12573,
+Loneliness,0.07537,0.13656,0.552,0.58098,
+Cheating_in_school,-0.11592,0.108,-1.073,0.28312,
+Health,0.176,0.13771,1.278,0.20124,
+Changing_the_past,0.1312,0.11843,1.108,0.26792,
+God,-0.14332,0.10074,-1.423,0.15483,
+Dreams,0.1421,0.19724,0.72,0.47126,
+Charity,0.0256,0.14038,0.182,0.85527,
+Number_of_friends,-0.16616,0.15408,-1.078,0.28084,
+Waiting,0.20191,0.13746,1.469,0.14187,
+New_environment,-0.21217,0.13453,-1.577,0.11478,
+Mood_swings,-0.39643,0.14841,-2.671,0.00756,**
+Appearence_and_gestures,-0.08218,0.1518,-0.541,0.58826,
+Socializing,-0.25126,0.14058,-1.787,0.07388,.
+Achievements,-0.04519,0.14267,-0.317,0.75146,
+Responding_to_a_serious_letter,0.16591,0.118,1.406,0.15972,
+Children,0.03916,0.12797,0.306,0.7596,
+Assertiveness,-0.07891,0.12545,-0.629,0.52933,
+Getting_angry,-0.13332,0.12614,-1.057,0.29055,
+Knowing_the_right_people,-0.01103,0.13465,-0.082,0.93472,
+Public_speaking,-0.22707,0.11131,-2.04,0.04135,*
+Unpopularity,0.14052,0.11919,1.179,0.2384,
+Life_struggles,-1.20319,0.12437,-9.674,< 0.0000000000000002,***
+Happiness_in_life,0.34628,0.19694,1.758,0.0787,.
+Energy_levels,-0.40102,0.17116,-2.343,0.01914,*
+Small_big_dogs,0.10146,0.11493,0.883,0.37736,
+Personality,0.44794,0.22265,2.012,0.04424,*
+Finding_lost_valuables,-0.14564,0.10664,-1.366,0.17201,
+Getting_up,0.03212,0.10443,0.308,0.75839,
+Interests_or_hobbies,0.39234,0.13017,3.014,0.00258,**
+Parents_advice,0.08515,0.16082,0.529,0.59649,
+Questionnaires_or_polls,-0.2965,0.12047,-2.461,0.01385,*
+---,,,,,
+Signif. codes:,0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1,,,,
+,,,,,
+(Dispersion parameter for binomial family taken to be 1),,,,,
+,,,,,
+Null deviance:,909.13,on,673,degrees of freedom,
+Residual deviance:,461.2,on,619,degrees of freedom,
+AIC:,571.2,,,,
+,,,,,
+Number of Fisher Scoring iterations:,6,,,,
