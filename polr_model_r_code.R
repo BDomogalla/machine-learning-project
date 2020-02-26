@@ -20,8 +20,9 @@ model_fit <- polr(Spiders ~ Daily_events + Prioritising_workload + Writing_notes
 summary(model_fit)
 
 summary_table <- coef(summary(model_fit))
-pval <- pnorm(abs(summary_table[, "t value"]),lower.tail = FALSE)* 2
-summary_table <- cbind(summary_table, "p value" = round(pval,3))
 summary_table
+pval <- pnorm(abs(summary_table[, "t value"]),lower.tail = FALSE)* 2
+summary_table2 <- cbind(summary_table, "p value" = round(pval,3))
+summary_table2
 
 write.csv(summary_table,"polr_model_coef_spiders_MOSHER.csv", row.names = TRUE)
