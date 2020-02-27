@@ -1,6 +1,6 @@
 library(MASS)
 
-data = read.csv("Data/personality_traits.csv", header = TRUE)
+data = read.csv("Data/personality_traits_adjusted_scale_MOSHER.csv", header = TRUE)
 View(data)
 
 model_fit <- glm(Gender ~ Daily_events + Prioritising_workload + Writing_notes + Workaholism +
@@ -13,11 +13,11 @@ model_fit <- glm(Gender ~ Daily_events + Prioritising_workload + Writing_notes +
                    Responding_to_a_serious_letter + Children + Assertiveness + Getting_angry + 
                    Knowing_the_right_people + Public_speaking + Unpopularity + Life_struggles + Happiness_in_life +
                    Energy_levels + Small_big_dogs + Personality + Finding_lost_valuables + Getting_up + Interests_or_hobbies +
-                   Parents_advice + Questionnaires_or_polls, data = phobia_personality_data, family="binomial")
+                   Parents_advice + Questionnaires_or_polls, data = data, family="binomial")
 
 summary_table <- coef(summary(model_fit))
 summary_table2 <- summary(model_fit)
 summary_table2
 
 
-write.csv(summary_table,"bi_logic_model_coef_gender_MOSHER.csv", row.names = TRUE)
+write.csv(summary_table,"model_coefficients/bi_logic_model_coef_gender_adjscale_MOSHER.csv", row.names = TRUE)
