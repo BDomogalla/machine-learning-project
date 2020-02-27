@@ -1,7 +1,6 @@
-install.packages("nnet")
 library("nnet")
 
-data = read.csv("Data/personality_traits.csv", header = TRUE)
+data = read.csv("Data/personality_traits_adjusted_scale_MOSHER.csv", header = TRUE)
 View(data)
 
 model_fit <- multinom(Education ~ Daily_events + Prioritising_workload + Writing_notes + Workaholism +
@@ -24,9 +23,9 @@ z <- summary(model_fit)$coefficients/summary(model_fit)$standard.errors
 p <- (1 - pnorm(abs(z), 0, 1))*2
 p
 
-write.csv(p,"multinom_p_values_education_MOSHER.csv", row.names = TRUE)
+write.csv(p,"model_coefficients/multinom_p_values_education_adjscale_MOSHER.csv", row.names = TRUE)
 
-write.csv(coef,"multinom_coef_values_education_MOSHER.csv", row.names = TRUE)
+write.csv(coef,"model_coefficients/multinom_coef_values_education_adjscale_MOSHER.csv", row.names = TRUE)
 
 
 

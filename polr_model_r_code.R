@@ -4,7 +4,7 @@ library(MASS)
 phobia_personality_data = read.csv("Data/personality_traits_adjusted_scale_MOSHER.csv", header = TRUE)
 View(phobia_personality_data)
 
-model_fit <- polr(Ageing ~ Daily_events + Prioritising_workload + Writing_notes + Workaholism +
+model_fit <- polr(Spiders ~ Daily_events + Prioritising_workload + Writing_notes + Workaholism +
                     Thinking_ahead + Final_judgement + Reliability + Keeping_promises + Loss_of_interest + 
                     Friends_versus_money + Funniness + Fake + Criminal_damage + Decision_making + 
                     Elections + Self_criticism + Judgment_calls + Hypochondria + Empathy + Eating_to_survive + 
@@ -25,4 +25,4 @@ pval <- pnorm(abs(summary_table[, "t value"]),lower.tail = FALSE)* 2
 summary_table2 <- cbind(summary_table, "p value" = round(pval,3))
 summary_table2
 
-write.csv(summary_table,"model_coefficients/polr_model_coef_ageing_adjscale_MOSHER.csv", row.names = TRUE)
+write.csv(summary_table2,"model_coefficients/polr_model_coef_spiders_adjscale_MOSHER.csv", row.names = TRUE)
