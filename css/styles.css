@@ -46,7 +46,7 @@ form em {
     color: #9e363a;
     font-size: 1.2em;
     font-style: normal;
-    margin-top: 14px;
+    margin-top: 10px;
 }
 
 header {
@@ -92,7 +92,7 @@ header nav .btn:hover {
 }
 
 .row {
-    padding: 30px 50px 10px 40px;
+    padding: 30px 40px 10px 10px;
 }
 
 .main-content {

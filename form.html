@@ -1,839 +1,919 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Machine Learning Project</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Machine Learning Project</title>
 
-    <!-- Bootstrap components -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap components -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- D3 -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <!--Added tooltip components-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <!--Added tooltip components-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 
-</head>
+    </head>
 
-<body>
-    <div class="container-fluid">
+    <body>
+        <div class="container-fluid">
 
-        <!-- Header -->
-        <header class="row">
-            <h1><a href="index.html">Machine Learning Project</a></h1>
-            <!-- Navigation -->
-            <nav>
-                <ul>
-                    <li><a class="btn" href="index.html">index</a></li>
-                    <li><a class="btn" href="data.html">data</a></li>
-                    <li><a class="btn" href="thing.html">thing</a></li>
-                    <li><a class="btn" href="form.html">form</a></li>
+            <!-- Header -->
+            <header class="row">
+                <h1><a href="index.html">Machine Learning Project</a></h1>
+                <!-- Navigation -->
+                <nav>
+                    <ul>
+                        <li><a class="btn" href="index.html">index</a></li>
+                        <li><a class="btn" href="data.html">data</a></li>
+                        <li><a class="btn" href="thing.html">thing</a></li>
+                        <li><a class="btn" href="form.html">form</a></li>
 
-                </ul>
-            </nav>
-        </header>
+                    </ul>
+                </nav>
+            </header>
 
-        <!-- Main Content -->
-        <!-- <div class="row main-content"> -->
+            <!-- Main Content -->
+            <!-- <div class="row main-content"> -->
 
-            <form>
+            <form action = "http://localhost:5000/result" method = "POST">
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Code Name</label>
                     <div class="col-sm-4">
-                      <input type="name" class="form-control" id="inputEmail3" placeholder="Code Name">
+                        <input type="name" class="form-control" id="inputEmail3" placeholder="Code Name">
                     </div>
-                  </div>
+                    </div>
                 <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">1. I try to do tasks as soon as possible and not leave them until the last minute. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q1"
+                                <input class="form-check-input" type="radio" name="Prioritising workload"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q1"
+                                <input class="form-check-input" type="radio" name="Prioritising workload"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q1"
+                                <input class="form-check-input" type="radio" name="Prioritising workload"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
                 </fieldset>
                 <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">2. I always make a list, so I don’t forget anything. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q2"
+                                <input class="form-check-input" type="radio" name="Writing notes"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q2"
+                                <input class="form-check-input" type="radio" name="Writing notes"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q2"
+                                <input class="form-check-input" type="radio" name="Writing notes"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">3. I look at things from all different angles before I go ahead. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q3"
+                                <input class="form-check-input" type="radio" name="Thinking ahead"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q3"
+                                <input class="form-check-input" type="radio" name="Thinking ahead"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q3"
+                                <input class="form-check-input" type="radio" name="Thinking ahead"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">4. I am reliable at work and always complete all tasks given to me. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q4"
+                                <input class="form-check-input" type="radio" name="Reliability"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q4"
+                                <input class="form-check-input" type="radio" name="Reliability"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q4"
+                                <input class="form-check-input" type="radio" name="Reliability"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">5. I always keep my promises. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q5"
+                                <input class="form-check-input" type="radio" name="Keeping promises"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q5"
+                                <input class="form-check-input" type="radio" name="Keeping promises"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q5"
+                                <input class="form-check-input" type="radio" name="Keeping promises"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">6. I always try to be the funniest one. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q6"
+                                <input class="form-check-input" type="radio" name="Funniness"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q6"
+                                <input class="form-check-input" type="radio" name="Funniness"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q6"
+                                <input class="form-check-input" type="radio" name="Funniness"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>  
-                  <fieldset class="form-group">
+                </fieldset>  
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">7. I damaged things in the past when angry. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q7"
+                                <input class="form-check-input" type="radio" name="Criminal damage"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q7"
+                                <input class="form-check-input" type="radio" name="Criminal damage"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q7"
+                                <input class="form-check-input" type="radio" name="Criminal damage"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">8. I always try to vote in elections. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q8"
+                                <input class="form-check-input" type="radio" name="Elections"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q8"
+                                <input class="form-check-input" type="radio" name="Elections"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q8"
+                                <input class="form-check-input" type="radio" name="Elections"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">9. I often think about and regret the decisions I make. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q9"
+                                <input class="form-check-input" type="radio" name="Self-criticism"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q9"
+                                <input class="form-check-input" type="radio" name="Self-criticism"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q9"
+                                <input class="form-check-input" type="radio" name="Self-criticism"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">10. I am an empathetic person. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q10"
+                                <input class="form-check-input" type="radio" name="Empathy"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q10"
+                                <input class="form-check-input" type="radio" name="Empathy"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q10"
+                                <input class="form-check-input" type="radio" name="Empathy"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">11. I eat because I have to. I don’t enjoy food and eat as fast as I can. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q11"
+                                <input class="form-check-input" type="radio" name="Eating to survive"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q11"
+                                <input class="form-check-input" type="radio" name="Eating to survive"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q11"
+                                <input class="form-check-input" type="radio" name="Eating to survive"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">12. I try to give as much as I can to other people at Christmas. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q12"
+                                <input class="form-check-input" type="radio" name="Giving"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q12"
+                                <input class="form-check-input" type="radio" name="Giving"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q12"
+                                <input class="form-check-input" type="radio" name="Giving"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">13. I don’t like seeing animals suffering. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q13"
+                                <input class="form-check-input" type="radio" name="Compassion to animals"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q13"
+                                <input class="form-check-input" type="radio" name="Compassion to animals"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q13"
+                                <input class="form-check-input" type="radio" name="Compassion to animals"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">14. I look after things I have borrowed from others. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q14"
+                                <input class="form-check-input" type="radio" name="Borrowed stuff"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q14"
+                                <input class="form-check-input" type="radio" name="Borrowed stuff"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q14"
+                                <input class="form-check-input" type="radio" name="Borrowed stuff"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">15. I feel lonely in life. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q15"
+                                <input class="form-check-input" type="radio" name="Loneliness"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q15"
+                                <input class="form-check-input" type="radio" name="Loneliness"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q15"
+                                <input class="form-check-input" type="radio" name="Loneliness"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">16. I used to cheat at school. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q16"
+                                <input class="form-check-input" type="radio" name="Cheating in school"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q16"
+                                <input class="form-check-input" type="radio" name="Cheating in school"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q16"
+                                <input class="form-check-input" type="radio" name="Cheating in school"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">17. I worry about my health. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q17"
+                                <input class="form-check-input" type="radio" name="Health"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q17"
+                                <input class="form-check-input" type="radio" name="Health"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q17"
+                                <input class="form-check-input" type="radio" name="Health"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">18. I believe in God. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q18"
+                                <input class="form-check-input" type="radio" name="God"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q18"
+                                <input class="form-check-input" type="radio" name="God"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q18"
+                                <input class="form-check-input" type="radio" name="God"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">19. I always give to charity. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q19"
+                                <input class="form-check-input" type="radio" name="Charity"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q19"
+                                <input class="form-check-input" type="radio" name="Charity"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q19"
+                                <input class="form-check-input" type="radio" name="Charity"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">20. I have lots of friends. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q20"
+                                <input class="form-check-input" type="radio" name="Number of friends"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q20"
+                                <input class="form-check-input" type="radio" name="Number of friends"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q20"
+                                <input class="form-check-input" type="radio" name="Number of friends"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">21. I am very patient. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q21"
+                                <input class="form-check-input" type="radio" name="Waiting"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q21"
+                                <input class="form-check-input" type="radio" name="Waiting"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q21"
+                                <input class="form-check-input" type="radio" name="Waiting"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">22. My moods change quickly. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q22"
+                                <input class="form-check-input" type="radio" name="Mood swings"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q22"
+                                <input class="form-check-input" type="radio" name="Mood swings"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q22"
+                                <input class="form-check-input" type="radio" name="Mood swings"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">23. I am well mannered, and I look after my appearance. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q23"
+                                <input class="form-check-input" type="radio" name="Appearence and gestures"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q23"
+                                <input class="form-check-input" type="radio" name="Appearence and gestures"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q23"
+                                <input class="form-check-input" type="radio" name="Appearence and gestures"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">24. I enjoy meeting new people. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q24"
+                                <input class="form-check-input" type="radio" name="Socializing"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q24"
+                                <input class="form-check-input" type="radio" name="Socializing"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q24"
+                                <input class="form-check-input" type="radio" name="Socializing"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">25. I enjoy children’s company. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q25"
+                                <input class="form-check-input" type="radio" name="Children"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q25"
+                                <input class="form-check-input" type="radio" name="Children"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q25"
+                                <input class="form-check-input" type="radio" name="Children"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">26. I can get angry very easily. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q26"
+                                <input class="form-check-input" type="radio" name="Getting angry"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q26"
+                                <input class="form-check-input" type="radio" name="Getting angry"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q26"
+                                <input class="form-check-input" type="radio" name="Getting angry"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">27. I always make sure I connect with the right people. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q27"
+                                <input class="form-check-input" type="radio" name="Knowing the right people"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q27"
+                                <input class="form-check-input" type="radio" name="Knowing the right people"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q27"
+                                <input class="form-check-input" type="radio" name="Knowing the right people"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">28. I must be well prepared before public speaking. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q28"
+                                <input class="form-check-input" type="radio" name="Public speaking"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q28"
+                                <input class="form-check-input" type="radio" name="Public speaking"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q28"
+                                <input class="form-check-input" type="radio" name="Public speaking"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">29. I will find a fault in myself if people don’t like me. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q29"
+                                <input class="form-check-input" type="radio" name="Unpopularity"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q29"
+                                <input class="form-check-input" type="radio" name="Unpopularity"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q29"
+                                <input class="form-check-input" type="radio" name="Unpopularity"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">30. I cry when I feel down, or things don’t go the right way. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q30"
+                                <input class="form-check-input" type="radio" name="Life struggles"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q30"
+                                <input class="form-check-input" type="radio" name="Life struggles"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q30"
+                                <input class="form-check-input" type="radio" name="Life struggles"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">31. I am 100% happy with my life. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q31"
+                                <input class="form-check-input" type="radio" name="Happiness in life"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q31"
+                                <input class="form-check-input" type="radio" name="Happiness in life"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q31"
+                                <input class="form-check-input" type="radio" name="Happiness in life"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">32. I am always full of life and energy. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q32"
+                                <input class="form-check-input" type="radio" name="Energy levels"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q32"
+                                <input class="form-check-input" type="radio" name="Energy levels"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q32"
+                                <input class="form-check-input" type="radio" name="Energy levels"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                         
                         </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
+                </fieldset>
+                <fieldset class="form-group">
                     <div class="form-group row">
-                        <label class="col-sm-2">On a scale of one to 5 how much do you like things: </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-5">33. I believe all my personality traits are positive. </label>
+                        <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q33"
+                                <input class="form-check-input" type="radio" name="Personality"
                                     id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Disagree</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q33"
+                                <input class="form-check-input" type="radio" name="Personality"
                                     id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Neutral</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="q33"
+                                <input class="form-check-input" type="radio" name="Personality"
                                     id="inlineRadio3" value="3">
                                 <label class="form-check-label" for="inlineRadio3">Agree</label>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10">
-                                  <button type="submit" class="btn btn-primary">Thanks for giving us your data!</button>
-                                </div>
-                              </div>
                         </div>
                     </div>
-                  </fieldset>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="form-group row">
+                        <label class="col-sm-5">34. If I find something that doesn’t belong to me, I will hand it in. </label>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Finding lost valuables"
+                                    id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">Disagree</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Finding lost valuables"
+                                    id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Finding lost valuables"
+                                    id="inlineRadio3" value="3">
+                                <label class="form-check-label" for="inlineRadio3">Agree</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="form-group row">
+                        <label class="col-sm-5">35. I find it very difficult to get up in the morning. </label>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Getting up"
+                                    id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">Disagree</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Getting up"
+                                    id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Getting up"
+                                    id="inlineRadio3" value="3">
+                                <label class="form-check-label" for="inlineRadio3">Agree</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="form-group row">
+                        <label class="col-sm-5">36. I have many different hobbies and interests. </label>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Interests or hobbies"
+                                    id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">Disagree</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Interests or hobbies"
+                                    id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Interests or hobbies"
+                                    id="inlineRadio3" value="3">
+                                <label class="form-check-label" for="inlineRadio3">Agree</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="form-group row">
+                        <label class="col-sm-5">37. I always listen to my parents’ advice. </label>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Parents' advice"
+                                    id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">Disagree</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Parents' advice"
+                                    id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Parents' advice"
+                                    id="inlineRadio3" value="3">
+                                <label class="form-check-label" for="inlineRadio3">Agree</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="form-group row">
+                        <label class="col-sm-5">39. I enjoy taking part in surveys. </label>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Questionnaires or polls"
+                                    id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">Disagree</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Questionnaires or polls"
+                                    id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Questionnaires or polls"
+                                    id="inlineRadio3" value="3">
+                                <label class="form-check-label" for="inlineRadio3">Agree</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Thanks for giving us your data!</button>
+                        </div>
+                </fieldset>
+            </form>
 
-    <!-- Footer -->
-    <footer class="row">
-        <p>&copy;2020 Bryan Domogalla, Cherie Mosher, and Taber Webb - University of Oregon Data Analytics Boot
-            Camp.<br>
-            The complete <a href="https://www.kaggle.com/miroslavsabo/young-people-survey/data">young-people-survey
-            </a> </p>
-    </footer>
+            <!-- Footer -->
+            <footer class="row">
+                <p>&copy;2020 Bryan Domogalla, Cherie Mosher, and Taber Webb - University of Oregon Data Analytics Boot
+                    Camp.<br>
+                    The complete <a href="https://www.kaggle.com/miroslavsabo/young-people-survey/data">young-people-survey
+                    </a> </p>
+            </footer>
 
-    </div>
+        </div>
 
-    <!-- JS for Charts -->
+        <!-- JS for Charts -->
 
-    <!-- <script src="js/bubble.js"></script> -->
+        <!-- <script src="js/bubble.js"></script> -->
 
-</body>
+    </body>
 
 </html>
