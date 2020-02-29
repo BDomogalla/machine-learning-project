@@ -142,6 +142,20 @@ def result():
     # Send your user back to the form page or another page if you like
     return redirect('/')
 
+@app.route('/about',methods = ['GET'])
+def about():
+    """
+    Display the about page
+    """
+    return render_template('about.html')
+
+@app.route('/results',methods = ['GET'])
+def results():
+    """
+    Display the results page
+    """
+    return render_template('results.html')
+
 if __name__ == '__main__':
     # You probably don't want debug=True in your final deploy
     app.run(debug = True)
