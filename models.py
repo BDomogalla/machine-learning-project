@@ -54,7 +54,7 @@ def snakes_func():
     snakes_prediction = snakes_model.predict_classes(X_scaled)
     prediction_label = label_encoder.inverse_transform(snakes_prediction)
 
-    return print(f"Predicted class: {prediction_label}")
+    return print(f"Predicted Fear of Snakes: {prediction_label}")
 
 
 
@@ -76,7 +76,7 @@ def spiders_func():
     # Use Model to Predict Target
     spiders_prediction = spiders_model.predict(X_scaled)
 
-    return print(f"Predicted class: {spiders_prediction}")
+    return print(f"Predicted Fear of Spiders: {spiders_prediction}")
 
     
 
@@ -92,7 +92,7 @@ def heights_func():
     # Use Model to Predict Target
     heights_prediction = heights_model.predict(X)
 
-    return print(f"Predicted class: {heights_prediction}")
+    return print(f"Predicted Fear of Heights: {heights_prediction}")
 
 
 
@@ -108,7 +108,7 @@ def education_func():
     # Use Model to Predict Target
     education_prediction = education_model.predict(X)
 
-    return print(f"Predicted class: {education_prediction}")
+    return print(f"Predicted Education Level: {education_prediction}")
 
 
 
@@ -124,7 +124,7 @@ def gender_func():
     # Use Model to Predict Target
     gender_prediction = gender_model.predict(X)
 
-    return print(f"Predicted class: {gender_prediction}")
+    return print(f"Predicted Gender: {gender_prediction}")
 
 
 
