@@ -40,7 +40,7 @@ def snakes_func():
     X_scaled = X_scaler.transform(X)
 
     # Label-Encode Data
-    # label_encoder = LabelEncoder()
+    label_encoder = LabelEncoder()
     # label_encoder.fit(y)
     # encoded_y = label_encoder.transform(y)
 
@@ -52,9 +52,9 @@ def snakes_func():
 
     # Use Model to Predict Target
     snakes_prediction = snakes_model.predict_classes(X_scaled)
-    # prediction_label = label_encoder.inverse_transform(prediction)
+    prediction_label = label_encoder.inverse_transform(snakes_prediction)
 
-    return print(f"Predicted class: {snakes_prediction}")
+    return print(f"Predicted class: {prediction_label}")
 
 
 
