@@ -10,21 +10,21 @@ from sklearn.externals import joblib
 
 all_features_df = pd.read_csv("filesource")
 
-snakes_features_df = all_features_df[["Thinking ahead", "Health", "God", "Number of friends",
-                                      "Children", "Getting angry", "Public speaking"]]
+snakes_features_df = all_features_df[["Thinking_ahead", "Health", "God", "Number_of_friends",
+                                      "Children", "Getting_angry", "Public_speaking"]]
 
-spiders_features_df = all_features_df[["Number of friends", "Appearance and gestures", "Children", "Getting angry", "Public speaking",
-                                       "Unpopularity", "Life struggles", "Happiness in life", "Getting up", "Questionnaires or polls"]]
+spiders_features_df = all_features_df[["Number_of_friends", "Appearance_and_gestures", "Children", "Getting_angry", "Public_speaking",
+                                       "Unpopularity", "Life_struggles", "Happiness_in_life", "Getting_up", "Questionnaires_or_polls"]]
 
-heights_features_df = all_features_df[["Funniness", "Self-criticism", "Eating to survive", "Loneliness", "Health", "Waiting",
-                                       "Appearance and gestures", "Knowing the right people", "Life struggles", "Energy levels"]]
+heights_features_df = all_features_df[["Funniness", "Self_criticism", "Eating_to_survive", "Loneliness", "Health", "Waiting",
+                                       "Appearance_and_gestures", "Knowing_the_right_people", "Life_struggles", "Energy_levels"]]
 
-gender_features_df = all_features_df[["Prioritizing workload", "Writing notes", "Reliability", "Keeping promises", "Funniness", "Criminal damage",
-                                      "Empathy", "Eating to survive", "Giving", "Compassion to animals", "Mood swings", "Socializing", "Life struggles",
-                                      "Personality", "Interests or hobbies", "Questionnaires or polls"]]
+gender_features_df = all_features_df[["Prioritising_workload", "Writing_notes", "Reliability", "Keeping_promises", "Funniness", "Criminal_damage",
+                                      "Empathy", "Eating_to_survive", "Giving", "Compassion_to_animals", "Mood_swings", "Socializing", "Life_struggles",
+                                      "Personality", "Interests_or_hobbies", "Questionnaires_or_polls"]]
 
-education_features_df = all_features_df[["Elections", "Borrowed stuff", "Cheating in school", "God", "Charity", "Waiting", "Appearance and gestures",
-                                         "Happiness to life", "Personality", "Finding lost valuables"]]
+education_features_df = all_features_df[["Elections", "Borrowed_stuff", "Cheating_in_school", "God", "Charity", "Waiting", "Appearance_and_gestures",
+                                         "Happiness_in_life", "Personality", "Finding_lost_valuables"]]
 
 
 
@@ -32,7 +32,6 @@ def snakes_func():
 
     # Define the Features (X) to be Used in the Model
     X = snakes_features_df
-    y = all_features_df["Snakes"]
 
     # Create a MinMaxScaler Model and Fit it to the X values
     X_scaler = MinMaxScaler().fit(X)
@@ -40,19 +39,24 @@ def snakes_func():
     # Transform the Data Using the X_Scaler
     X_scaled = X_scaler.transform(X)
 
-    # Label-Encode Data
-    label_encoder = LabelEncoder()
-    label_encoder.fit(y)
-    encoded_y = label_encoder.transform(y)
-
     # Load the model
     snakes_model = load_model("models/Best_models/snakes_NN_model.h5")
 
     # Use Model to Predict Target
     snakes_prediction = snakes_model.predict_classes(X_scaled)
-    prediction_label = label_encoder.inverse_transform(snakes_prediction)
 
-    return print(f"Predicted Fear of Snakes: {prediction_label}")
+    def prediction_translator():
+
+        if snakes_prediction == 2:
+            return "Not Afraid"
+
+        elif snakes_prediction == 1:
+            return "Neutral"
+
+        else:
+            return "Afraid"
+
+        return print(f"Predicted Fear of Snakes: {prediction_translator(snakes_prediction)}")
 
 
 
