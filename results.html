@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
- 
+
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-   
+
 
 </head>
 
@@ -32,7 +32,7 @@
                     <li><a class="btn" href="index.html">Form</a></li>
                     <li><a class="btn" href="about.html">About</a></li>
                     <li><a class="btn" href="results.html">Results</a></li>
-                    
+
                 </ul>
             </nav>
         </header>
@@ -40,21 +40,137 @@
         <!-- Main Content -->
         <div class="row main-content">
 
-            <!-- Summary -->
-            <!-- <section class="col col-12">
-                <p style="margin-bottom:35px">The <a href="https://www.kaggle.com/miroslavsabo/young-people-survey/data">Young People Survey</a>
-                  Paragraph
-                </p>
-            </section> -->
-            <section class="col col-8">
-            <div class='tableauPlaceholder' id='viz1582831985829' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;ModelAccuracy_15828319414580&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ModelAccuracy_15828319414580&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;ModelAccuracy_15828319414580&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1582831985829');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-            
-            </section>
+        
             <section class="col col-4">
-                <h3>Header</h3>
-                <p>textttttttttttttttttttttttttttttttttttttttt</p>
+                <h3>Overall Analysis</h3>
+                <p>Respondents were asked their gender and could either answer Male or Female. We found that the list of
+                    features below was statistically significant in predicting the gender of the respondent. Out of the
+                    three models, KNN was by far the most accurate in predicting gender, correctly predicting gender
+                    84.6% of the time. Logistic regression was the second-best model with an accuracy of 76.2%, lastly
+                    the neural network model predicted gender correctly 74.0% of the time. </p>
+            </section>
+            <section class="col col-8">
+                <div class='tableauPlaceholder' id='viz1582831985829' style='position: relative'><noscript><a
+                            href='#'><img alt=' '
+                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;ModelAccuracy_15828319414580&#47;Sheet1&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='ModelAccuracy_15828319414580&#47;Sheet1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image'
+                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;ModelAccuracy_15828319414580&#47;Sheet1&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' /></object></div>
+                <script
+                    type='text/javascript'>                    var divElement = document.getElementById('viz1582831985829'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
             </section>
 
+        </div>
+        <div>
+            <h3>Gender</h3>
+            <p>
+                Respondents were asked their gender and could either answer Male or Female. We found that the list of
+                features below was statistically significant in predicting the gender of the respondent. Out of the
+                three models, KNN was by far the most accurate in predicting gender, correctly predicting gender 84.6%
+                of the time. Logistic regression was the second-best model with an accuracy of 76.2%, lastly the neural
+                network model predicted gender correctly 74.0% of the time.
+            </p>
+            <ul>
+                <li>I try to do tasks as soon as possible and not leave them until last minute.</li>
+                <li>I always make a list so I don't forget anything.</li>
+                <li>I am reliable at work and always complete all tasks given to me.</li>
+                <li>I always keep my promises.</li>
+                <li>I always try to be the funniest one.</li>
+                <li>I damaged things in the past when angry.</li>
+                <li>I don't like seeing animals suffering.</li>
+                <li>I am empathetic person.</li>
+                <li>I try to give as much as I can to other people at Christmas.</li>
+                <li>I eat because I have to. I don't enjoy food and eat as fast as I can.</li>
+                <li>My moods change quickly.</li>
+                <li>I enjoy meeting new people.</li>
+                <li>I cry when I feel down or things don't go the right way.</li>
+                <li>I have many different hobbies and interests.</li>
+                <li>I enjoy taking part in surveys.</li>
+            </ul>
+            <h3>Education</h3>
+            <p>
+                Respondents were asked their highest education achieved and could answer one of: ‘Currently a Primary
+                school pupil’, ‘Primary school’, ‘Secondary school’, ‘College/Bachelor degree’. The list of 7 features
+                below were statistically significant in predicting. Our KNN model and neural network models performed
+                the best in predicting educational achievement with both having an accuracy of 63.3%. The Logistic
+                Regression model was a little less accurate, correctly predicting education 62.0% of the time. We
+                decided to use the KNN model over the neural network model due its advantages in simplicity and
+                replicability. </p>
+            <ul>
+                <li>If I find something the doesn't belong to me I will hand it in.</li>
+                <li>I believe all my personality traits are positive.</li>
+                <li>I am 100% happy with my life.</li>
+                <li>I believe in God.</li>
+                <li>I used to cheat at school.</li>
+                <li>I look after things I have borrowed from others.</li>
+                <li>I always try to vote in elections.</li>
+            </ul>
+
+            <h3>Heights</h3>
+            <p>
+                Afraid, not afraid or neutral. The KNN model was the most accurate in predicting fear of heights, with a
+                score of 55.0%. Logistic regression was the second most accurate at 53.1%, followed by the neural
+                network with an accuracy of 52.1%. The KNN model yields a 21.7% improvement over a random guess in
+                predicting fear of heights. A model that predicts a phobia that is somewhat irrational in nature is
+            </p>
+            <ul>
+                <li>I always try to be the funniest one. </li>
+                <li>I often think about and regret the decisions I make. </li>
+                <li>I eat because I have to. I don't enjoy food and eat as fast as I can. </li>
+                <li>I feel lonely in life. </li>
+                <li>I worry about my health. </li>
+                <li>I am very patient. </li>
+                <li>I am well mannered and I look after my appearance. </li>
+                <li>I always make sure I connect with the right people. </li>
+                <li>I cry when I feel down or things don't go the right way. </li>
+                <li>I am always full of life and energy. </li>
+            </ul>
+            <h3>Snakes</h3>
+            <p>
+                Afraid, not afraid or neutral. The neural network model was the most accurate in predicting phobia of
+                snakes, with an accuracy of 52.7%. The KNN model was the second most accurate at 52.1%, followed by
+                logistic regression with an accuracy of 49.9%. The neural network model yields a 19.4% improvement over
+                a random guess.
+            </p>
+            <ul>
+                <li>I look at things from all different angles before I go ahead. </li>
+                <li>I worry about my health. </li>
+                <li>I believe in God. </li>
+                <li>I have lots of friends. </li>
+                <li>I enjoy childrens' company. </li>
+                <li>I can get angry very easily. </li>
+                <li>I have to be well prepared before public speaking. </li>
+            </ul>
+            <h3>Spiders</h3>
+            <p>
+                Afraid, not afraid or neutral. Logistic regression was the most accurate model in predicting fear of
+                spiders, with an accuracy of 55.6%. KNN was the second most accurate at 55.0%, followed by the neural
+                network model at 50.9%. The logistic regression model yielded a 22.3% improvement over a random guess.
+            </p>
+            <ul>
+                <li>I have lots of friends. </li>
+                <li>I am well mannered and I look after my appearance. </li>
+                <li>I enjoy childrens' company. </li>
+                <li>I can get angry very easily. </li>
+                <li>I have to be well prepared before public speaking. </li>
+                <li>I will find a fault in myself if people don't like me. </li>
+                <li>I cry when I feel down or things don't go the right way. </li>
+                <li>I am 100% happy with my life. </li>
+                <li>I find it very difficult to get up in the morning. </li>
+                <li>I enjoy taking part in surveys. </li>
+            </ul>
         </div>
 
         <!-- Footer -->
@@ -62,7 +178,7 @@
             <p>&copy;2020 Bryan Domogalla, Cherie Mosher, and Taber Webb - University of Oregon Data Analytics Boot
                 Camp.<br>
                 The complete <a href="https://www.kaggle.com/miroslavsabo/young-people-survey/data">young-people-survey
-                    </a> </p>
+                </a> </p>
         </footer>
 
     </div>

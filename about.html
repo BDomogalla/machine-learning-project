@@ -39,16 +39,27 @@
 
         <!-- Main Content -->
         <div class="row main-content">
-
+            <section class="col col-12">
+                <h3>About the Dataset</h3>
+                <p>
+                    This data comes from the young people survey in Slovakia, sourced from Kaggle. The data was collected in 2013 with 1,010 students at FSEV UK aged 15 to 30. All students were of Slovakian nationality. The survey asked 150 questions that can be split up into the following groups: ‘Music Preferences’, ‘Movie Preferences’, ‘Hobbies & Interests’, ‘Phobias’, ‘Personality traits, Views on life, & Opinions’, ‘Spending Habits’ and ‘Demographics’. To narrow down our scope, we chose to limit our model features to ‘Personality traits, Views on life, & Opinions’ and chose Gender, Education, Phobia of Heights, Phobia of Spiders and Phobia of Snakes as our targets. The features we used all are on a five-point Likert scale from Strongly disagree (1) to Strongly agree (5), we removed the three variables that did not comply with this same format.
+                </p>
+                <h3>Our Process</h3>
+                <p>
+                    We used logistic regression, k-nearest neighbors and neural network models to try and best fit our five targets. These three models were chosen based on their varied approaches to predicting data. We chose to try and predict our targets with the Personality traits, views on life, & opinions variables. Because there are 57 different questions in this group, we ran a logistic regression model in R to inform our models about what variables were statistically significant in predicting each target. 
+                </p>
+                <p>
+                    For our logistic regression model, we used our informed set of features to predict the target and then used gridsearch to tune the parameters of the model. For our k-nearest neighbors (KNN) model, we used our informed features and then looped through different k values to see which had the highest accuracy. The neural networks also used the informed features, we then split the data into training and testing data and then scaled it. We found that our dataset was too small for deep learning, which yielded significant overfitting. For each of our different models, we used two layers. The first layer varied in the number of units, but all used a ReLU activation function. The second layer was a softmax layer to predict our desired target. We then fit our neural network model with varying number of epochs per model. We evaluated this model with accuracy and loss but used accuracy to compare the results to the other two models.
+                </p>
+                
+            </section>
             <!-- Summary -->
             <section class="col col-12">
                 <p style="margin-bottom:35px">The <a href="https://www.kaggle.com/miroslavsabo/young-people-survey/data">Young People Survey</a>
-                  Paragraph
                 </p>
             </section>
-
+        
          
-
             </section>
         </div>
 
