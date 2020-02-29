@@ -54,7 +54,7 @@ def snakes_func():
     snakes_prediction = snakes_model.predict_classes(X_scaled)
     # prediction_label = label_encoder.inverse_transform(prediction)
 
-    return print(f"Predicted class: {prediction_label}")
+    return print(f"Predicted class: {snakes_prediction}")
 
 
 
