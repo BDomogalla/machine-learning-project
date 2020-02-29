@@ -15,7 +15,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
 
 </head>
@@ -43,7 +43,8 @@
                 <h3>About the Dataset</h3>
                 <p>
                     This data comes from the young people survey in Slovakia, sourced from Kaggle. The data was
-                    collected in 2013 with 1,010 students at FSEV UK aged 15 to 30. All students were of Slovakian
+                    collected in 2013 with 1,010 students at FSEV UK aged 15 to 30. After removing all the rows with
+                    null values, we had 674 full responses to use in our models. All students were of Slovakian
                     nationality. The survey asked 150 questions that can be split up into the following groups: ‘Music
                     Preferences’, ‘Movie Preferences’, ‘Hobbies & Interests’, ‘Phobias’, ‘Personality traits, Views on
                     life, & Opinions’, ‘Spending Habits’ and ‘Demographics’. To narrow down our scope, we chose to limit
@@ -59,7 +60,12 @@
                     chose to try and predict our targets with the Personality traits, views on life, & opinions
                     variables. Because there are 57 different questions in this group, we ran a logistic regression
                     model in R to inform our models about what variables were statistically significant in predicting
-                    each target.
+                    each target. For gender, we used a binary logistic regression. For Education, we used a multinomial
+                    logistic regression analysis because the dependent variable was categorical. For the Phobias, we
+                    used a proportional odds logistic regression because the targets were categorical with more than 2
+                    ordered levels. We simplified the levels from the 5 Likert scale values down to 3: ‘Agree’,
+                    ‘Neutral’ & ‘Disagree’. Limiting the number of states of our targets gave us higher number of
+                    instances of each value, which helped the accuracy of our model.
                 </p>
                 <p>
                     For our logistic regression model, we used our informed set of features to predict the target and

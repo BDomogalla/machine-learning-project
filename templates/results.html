@@ -15,7 +15,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
 
 </head>
@@ -41,11 +41,23 @@
         <div class="row main-content">
             <section class="col col-4">
                 <h3>Overall Analysis</h3>
-                <p>Respondents were asked their gender and could either answer Male or Female. We found that the list of
-                    features below was statistically significant in predicting the gender of the respondent. Out of the
-                    three models, KNN was by far the most accurate in predicting gender, correctly predicting gender
-                    84.6% of the time. Logistic regression was the second-best model with an accuracy of 76.2%, lastly
-                    the neural network model predicted gender correctly 74.0% of the time. </p>
+                <p>
+                    Gender was the most accurate model (84.6%) followed by Education (63.3%), Spiders (55.6%), Heights
+                    (55.0%) and Snakes (52.7%). Interestingly, the three types of models for each target yielded
+                    accuracies within 5% of each other, outside of Gender. Which suggests that the parameters that we
+                    chose for the neural network were very close to perfectly optimal. Relative to random chance, our
+                    Education model was the best with an improvement of 46.6% compared to randomly predicting the target
+                    state. Gender (34.6%) was the second best followed by Spiders (22.3%), Heights (21.7%) and Snakes
+                    (19.4%). Phobias are by nature somewhat irrational and hard to explain why they occur, which makes
+                    predicting them inherently challenging. Predicting gender is inherently easier due to there only
+                    being two target states in the dataset so it was not surprising that this was our most accurate
+                    model. There were 6 different education levels, making this the hardest to accurately predict, but
+                    it was our second most accurate model. The k-nearest neighbor model was most accurate for three of
+                    the questions and the neural network and logistic regression were each most accurate for one.
+                    Logistic regression and KNN models were very easy to work with, whereas the neural network model was
+                    volatile, where the accuracy of the model with the same parameters could change by around 4% with
+                    the same parameters.
+                </p>
             </section>
             <section class="col col-8">
                 <div class='tableauPlaceholder' id='viz1582831985829' style='position: relative'><noscript><a
@@ -72,18 +84,21 @@
 
         </div>
         <div>
-        
-        <section class="col col-10">
-            <h3>Gender</h3>
-            
-            <p>
-                Respondents were asked their gender and could either answer Male or Female. We found that the list of
-                features below was statistically significant in predicting the gender of the respondent. Out of the
-                three models, KNN was by far the most accurate in predicting gender, correctly predicting gender 84.6%
-                of the time. Logistic regression was the second-best model with an accuracy of 76.2%, lastly the neural
-                network model predicted gender correctly 74.0% of the time.
-            </p>
-        </section>
+
+            <section class="col col-10">
+                <h3>Gender</h3>
+
+                <p>
+                    Respondents were asked their gender and could either answer Male or Female. We found that the list
+                    of
+                    features below was statistically significant in predicting the gender of the respondent. Out of the
+                    three models, KNN was by far the most accurate in predicting gender, correctly predicting gender
+                    84.6%
+                    of the time. Logistic regression was the second-best model with an accuracy of 76.2%, lastly the
+                    neural
+                    network model predicted gender correctly 74.0% of the time.
+                </p>
+            </section>
             <div class="row main-content">
                 <section class="col col-8">
                     <ul>
@@ -102,13 +117,32 @@
                         <li>I cry when I feel down or things don't go the right way.</li>
                         <li>I have many different hobbies and interests.</li>
                         <li>I enjoy taking part in surveys.</li>
-                </ul>
-            </section>
+                    </ul>
+                </section>
                 <section class="col col-4">
-                    <div class='tableauPlaceholder' id='viz1583004053760' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet35&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DataBreakdowns&#47;Sheet35' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet35&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1583004053760');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    <div class='tableauPlaceholder' id='viz1583004053760' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet35&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='DataBreakdowns&#47;Sheet35' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet35&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object></div>
+                    <script
+                        type='text/javascript'>                    var divElement = document.getElementById('viz1583004053760'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                 </section>
             </div>
-        
+
             <h3>Education</h3>
             <p>
                 Respondents were asked their highest education achieved and could answer one of: ‘Currently a Primary
@@ -117,7 +151,7 @@
                 the best in predicting educational achievement with both having an accuracy of 63.3%. The Logistic
                 Regression model was a little less accurate, correctly predicting education 62.0% of the time. We
                 decided to use the KNN model over the neural network model due its advantages in simplicity and
-                replicability. 
+                replicability.
             </p>
             <div class="row main-content">
                 <section class="col col-8">
@@ -132,7 +166,28 @@
                     </ul>
                 </section>
                 <section class="col col-4">
-                    <div class='tableauPlaceholder' id='viz1583005126631' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet34&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DataBreakdowns&#47;Sheet34' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet34&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1583005126631');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>            </section>
+                    <div class='tableauPlaceholder' id='viz1583005126631' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet34&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='DataBreakdowns&#47;Sheet34' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet34&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='filter' value='publish=yes' /></object></div>
+                    <script
+                        type='text/javascript'>                    var divElement = document.getElementById('viz1583005126631'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                </section>
                 </section>
             </div>
 
@@ -159,7 +214,26 @@
                     </ul>
                 </section>
                 <section class="col col-4">
-                    <div class='tableauPlaceholder' id='viz1583005878127' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet33&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DataBreakdowns&#47;Sheet33' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet33&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1583005878127');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>            
+                    <div class='tableauPlaceholder' id='viz1583005878127' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet33&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='DataBreakdowns&#47;Sheet33' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet33&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object></div>
+                    <script
+                        type='text/javascript'>                    var divElement = document.getElementById('viz1583005878127'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                 </section>
             </div>
             <h3>Snakes</h3>
@@ -180,9 +254,28 @@
                         <li>I can get angry very easily. </li>
                         <li>I have to be well prepared before public speaking. </li>
                     </ul>
-             </section>
+                </section>
                 <section class="col col-4">
-                    <div class='tableauPlaceholder' id='viz1583005956126' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DataBreakdowns&#47;Sheet3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1583005956126');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>                
+                    <div class='tableauPlaceholder' id='viz1583005956126' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet3&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='DataBreakdowns&#47;Sheet3' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet3&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object></div>
+                    <script
+                        type='text/javascript'>                    var divElement = document.getElementById('viz1583005956126'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                 </section>
             </div>
             <h3>Spiders</h3>
@@ -207,7 +300,26 @@
                     </ul>
                 </section>
                 <section class="col col-4">
-                    <div class='tableauPlaceholder' id='viz1583006144736' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet32&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DataBreakdowns&#47;Sheet32' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet32&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1583006144736');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    <div class='tableauPlaceholder' id='viz1583006144736' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet32&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='DataBreakdowns&#47;Sheet32' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DataBreakdowns&#47;Sheet32&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object></div>
+                    <script
+                        type='text/javascript'>                    var divElement = document.getElementById('viz1583006144736'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                 </section>
             </div>
         </div>
