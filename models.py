@@ -5,6 +5,7 @@ import pandas as pd
 import os
 
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+from tensorflow.keras.models import load_model
 from sklearn.externals import joblib
 
 all_features_df = pd.read_csv("filesource")
@@ -29,9 +30,9 @@ education_features_df = all_features_df[["Elections", "Borrowed stuff", "Cheatin
 
 def snakes_func():
 
-    # Define the Features (X) and Target (y) to be Used in the Model
+    # Define the Features (X) to be Used in the Model
     X = snakes_features_df
-    # y = all_features_df["Spiders"]
+    y = all_features_df["Snakes"]
 
     # Create a MinMaxScaler Model and Fit it to the X values
     X_scaler = MinMaxScaler().fit(X)
@@ -41,14 +42,11 @@ def snakes_func():
 
     # Label-Encode Data
     label_encoder = LabelEncoder()
-    # label_encoder.fit(y)
-    # encoded_y = label_encoder.transform(y)
-
-    # Convert Encoded Labels to One-Hot-Encoding
-    # y_categorical = to_categorical(encoded_y)
+    label_encoder.fit(y)
+    encoded_y = label_encoder.transform(y)
 
     # Load the model
-    snakes_model = joblib.load("models/Best_models/snakes_NN_model.h5")
+    snakes_model = load_model("models/Best_models/snakes_NN_model.h5")
 
     # Use Model to Predict Target
     snakes_prediction = snakes_model.predict_classes(X_scaled)
@@ -60,9 +58,8 @@ def snakes_func():
 
 def spiders_func():
 
-    # Define the Features (X) and Target (y) to be Used in the Model
+    # Define the Features (X) and to be Used in the Model
     X = spiders_features_df
-    # y = all_features_df["Spiders"]
 
     # Create a MinMaxScaler Model and Fit it to the X values
     X_scaler = MinMaxScaler().fit(X)
@@ -82,9 +79,8 @@ def spiders_func():
 
 def heights_func():
 
-    # Define the Features (X) and Target (y) to be Used in the Model
+    # Define the Features (X) to be Used in the Model
     X = heights_features_df
-    # y = all_features_df["Heights"]
 
     # Load the model
     heights_model = joblib.load("models/Best_models/heights_KNN_model.sav")
@@ -98,9 +94,8 @@ def heights_func():
 
 def education_func():
 
-    # Define the Features (X) and Target (y) to be Used in the Model
+    # Define the Features (X) and to be Used in the Model
     X = education_features_df
-    # y = all_features_df["Education"]
 
     # Load the model
     education_model = joblib.load("models/Best_models/education_KNN_model.sav")
@@ -114,9 +109,8 @@ def education_func():
 
 def gender_func():
 
-    # Define the Features (X) and Target (y) to be Used in the Model
+    # Define the Features (X) and to be Used in the Model
     X = gender_features_df
-    # y = all_features_df["Gender"]
 
     # Load the model
     gender_model = joblib.load("models/Best_models/gender_KNN_model.sav")
