@@ -9,14 +9,13 @@ app = Flask(__name__)
 
 # How should the app connect to your db?
 # This is nice and quick for local testing
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 # But use this one when you deploy to heroku
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 
 
 # Makes sqlalchemy library/connection easy to use throughout the app
 db = SQLAlchemy(app)
-
 
 class FormResponse(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -29,9 +28,9 @@ class FormResponse(db.Model):
 
 # You probably do not want to drop data once you deploy, but if you're
 # Having issues while changing the model attributes this may be helpful
-# db.drop_all()
+db.drop_all()
 # Have sqlalchemy create your db tables based on your Models
-# db.create_all()
+db.create_all()
 
 
 @app.route('/',methods = ['GET'])
@@ -39,7 +38,7 @@ def form():
     """
     Display the form page
     """
-    return render_template('form.html')
+    return render_template('index.html')
 
 
 @app.route('/result',methods = ['POST'])
