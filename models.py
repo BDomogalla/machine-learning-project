@@ -7,23 +7,32 @@ import os
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from tensorflow.keras.models import load_model
 from sklearn.externals import joblib
+from sqlalchemy import create_engine
 
-all_features_df = pd.read_csv("filesource")
+prediction_results_df = pd.DataFrame(columns=["Code Name", "Gender", "Education Level", "Snake Phobia", "Spider Phobia", "Heights Phobia"])
+
+engine = create_engine("postgres://cbpjofuppjivoh:db88c12a2c192763cec7f68ac08842bd5b5cb86b846b9711f2bf37d9bdc6e202@ec2-3-231-46-238.compute-1.amazonaws.com:5432/d9rp5inji5fn0p")
+raw_engine = engine.raw_connection()
+all_features_df = pd.read_sql_query("SELECT * FROM form_response;", raw_engine)
+
+code_names = all_features_df["Code_name"]
+prediction_results_df["Code Name"] = code_names
+
 
 snakes_features_df = all_features_df[["Thinking_ahead", "Health", "God", "Number_of_friends",
                                       "Children", "Getting_angry", "Public_speaking"]]
 
-spiders_features_df = all_features_df[["Number_of_friends", "Appearance_and_gestures", "Children", "Getting_angry", "Public_speaking",
+spiders_features_df = all_features_df[["Number_of_friends", "Appearence_and_gestures", "Children", "Getting_angry", "Public_speaking",
                                        "Unpopularity", "Life_struggles", "Happiness_in_life", "Getting_up", "Questionnaires_or_polls"]]
 
 heights_features_df = all_features_df[["Funniness", "Self_criticism", "Eating_to_survive", "Loneliness", "Health", "Waiting",
-                                       "Appearance_and_gestures", "Knowing_the_right_people", "Life_struggles", "Energy_levels"]]
+                                       "Appearence_and_gestures", "Knowing_the_right_people", "Life_struggles", "Energy_levels"]]
 
 gender_features_df = all_features_df[["Prioritising_workload", "Writing_notes", "Reliability", "Keeping_promises", "Funniness", "Criminal_damage",
                                       "Empathy", "Eating_to_survive", "Giving", "Compassion_to_animals", "Mood_swings", "Socializing", "Life_struggles",
                                       "Personality", "Interests_or_hobbies", "Questionnaires_or_polls"]]
 
-education_features_df = all_features_df[["Elections", "Borrowed_stuff", "Cheating_in_school", "God", "Charity", "Waiting", "Appearance_and_gestures",
+education_features_df = all_features_df[["Elections", "Borrowed_stuff", "Cheating_in_school", "God", "Charity", "Waiting", "Appearence_and_gestures",
                                          "Happiness_in_life", "Personality", "Finding_lost_valuables"]]
 
 
@@ -45,7 +54,9 @@ def snakes_func():
     # Use Model to Predict Target
     snakes_prediction = snakes_model.predict_classes(X_scaled)
 
-    def prediction_translator():
+    def prediction_translator(snakes_prediction):
+
+        print(snakes_prediction)
 
         if snakes_prediction == 2:
             return "Not Afraid"
@@ -56,7 +67,11 @@ def snakes_func():
         else:
             return "Afraid"
 
-        return print(f"Predicted Fear of Snakes: {prediction_translator(snakes_prediction)}")
+    prediction_results_df["Snake Phobia"] = [prediction_translator(i) for i in snakes_prediction]
+
+    return print(f"Predicted Fear of Snakes: {[prediction_translator(i) for i in snakes_prediction]}")
+
+    
 
 
 
@@ -77,6 +92,8 @@ def spiders_func():
     # Use Model to Predict Target
     spiders_prediction = spiders_model.predict(X_scaled)
 
+    prediction_results_df["Spider Phobia"] = spiders_prediction
+
     return print(f"Predicted Fear of Spiders: {spiders_prediction}")
 
     
@@ -91,6 +108,8 @@ def heights_func():
 
     # Use Model to Predict Target
     heights_prediction = heights_model.predict(X)
+
+    prediction_results_df["Heights Phobia"] = heights_prediction
 
     return print(f"Predicted Fear of Heights: {heights_prediction}")
 
@@ -107,6 +126,8 @@ def education_func():
     # Use Model to Predict Target
     education_prediction = education_model.predict(X)
 
+    prediction_results_df["Education Level"] = education_prediction
+
     return print(f"Predicted Education Level: {education_prediction}")
 
 
@@ -122,6 +143,8 @@ def gender_func():
     # Use Model to Predict Target
     gender_prediction = gender_model.predict(X)
 
+    prediction_results_df["Gender"] = gender_prediction
+
     return print(f"Predicted Gender: {gender_prediction}")
 
 
@@ -131,3 +154,5 @@ spiders_func()
 heights_func()
 education_func()
 gender_func()
+
+print(prediction_results_df)
