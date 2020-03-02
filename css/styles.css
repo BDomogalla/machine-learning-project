@@ -149,18 +149,7 @@ select {
     font-size: 1.2em;
 }
 
-#bubble, #correlogram, #geochart_div {
-    margin: 0 auto;
-}
 
-#correlogram {
-    display: flex;
-    justify-content: center;
-}
-
-#correlogram g.cor {
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 #c_legend ul {
     display: flex;
@@ -176,9 +165,7 @@ select {
     padding: 0 0 0 5px;
 }
 
-#factors li {
-    margin-bottom: 6px;
-}
+
 
 /* Media Queries for Responsive CSS */
 @media (max-width:1180px) {

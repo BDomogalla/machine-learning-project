@@ -162,3 +162,5 @@ vignettes/*.pdf
 *.knit.md
 # R Environment Variables
 .Renviron
+#Other
+config.py
