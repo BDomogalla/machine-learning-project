@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Machine Learning Project</title>
+
+    <!-- Bootstrap components -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Our CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <header class="row">
+            <h1><a href="index.html">Projekt strojového učenia</a></h1>
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li><a class="btn" href="/">Form</a></li>
+                    <li><a class="btn" href="/about">About</a></li>
+                    <li><a class="btn" href="/results">Results</a></li>
+                    <li><a class="btn" href="/class">Class Predictions</a></li>
+
+                </ul>
+            </nav>
+        </header>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                  
+                <th scope="col">Code Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Education</th>
+                <th scope="col">Heights Phobia</th>
+                <th scope="col">Spiders Phobia</th>
+                <th scope="col">Snakes Phobia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                 <td>Otto</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+            </section>
+            <!-- Summary -->
+            <section class="col col-12">
+                <p style="margin-bottom:35px">The <a
+                        href="https://www.kaggle.com/miroslavsabo/young-people-survey/data">Young People Survey</a>
+                </p>
+            </section>
+
+
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="row">
+            <p>&copy;2020 Bryan Domogalla, Cherie Mosher, and Taber Webb - University of Oregon Data Analytics Boot
+                Camp.<br>
+                The complete <a href="https://www.kaggle.com/miroslavsabo/young-people-survey/data">young-people-survey
+                </a> </p>
+        </footer>
+
+    </div>
+
+
+
+</body>
+
+</html>
