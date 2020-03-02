@@ -156,6 +156,13 @@ def results():
     """
     return render_template('results.html')
 
+@app.route('/class',methods = ['GET'])
+def class_responses():
+    """
+    Display the results page
+    """
+    return render_template('class.html')
+
 if __name__ == '__main__':
     # You probably don't want debug=True in your final deploy
     app.run(debug = True)
