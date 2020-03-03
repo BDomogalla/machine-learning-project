@@ -164,3 +164,8 @@ vignettes/*.pdf
 .Renviron
 #Other
 config.py
+
+.DS_Store
+
+.Rhistory
+
