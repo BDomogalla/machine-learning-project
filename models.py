@@ -8,17 +8,21 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from tensorflow.keras.models import load_model
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
+from config import database_connection
 
+# Set-up Empty DataFrame to Add Prediction Results From Each Model
 prediction_results_df = pd.DataFrame(columns=["Code Name", "Gender", "Education Level", "Snake Phobia", "Spider Phobia", "Heights Phobia"])
 
-engine = create_engine("postgres://cbpjofuppjivoh:db88c12a2c192763cec7f68ac08842bd5b5cb86b846b9711f2bf37d9bdc6e202@ec2-3-231-46-238.compute-1.amazonaws.com:5432/d9rp5inji5fn0p")
+# Establish Database Connection
+engine = create_engine(database_connection)
 raw_engine = engine.raw_connection()
 all_features_df = pd.read_sql_query("SELECT * FROM form_response;", raw_engine)
 
+# Define Code Names Variable and Add All Code Names to Prediction Results DataFrame
 code_names = all_features_df["Code_name"]
 prediction_results_df["Code Name"] = code_names
 
-
+# Define the Features to be Used in Each Model
 snakes_features_df = all_features_df[["Thinking_ahead", "Health", "God", "Number_of_friends",
                                       "Children", "Getting_angry", "Public_speaking"]]
 
@@ -36,7 +40,7 @@ education_features_df = all_features_df[["Elections", "Borrowed_stuff", "Cheatin
                                          "Happiness_in_life", "Personality", "Finding_lost_valuables"]]
 
 
-
+# Create a Snakes Function to Run the Snakes Neural Net Model
 def snakes_func():
 
     # Define the Features (X) to be Used in the Model
@@ -54,6 +58,7 @@ def snakes_func():
     # Use Model to Predict Target
     snakes_prediction = snakes_model.predict_classes(X_scaled)
 
+    # Create a Prediction Translator Function to Assign Categorical Values to Numeric Predictions
     def prediction_translator(snakes_prediction):
 
         print(snakes_prediction)
@@ -67,14 +72,16 @@ def snakes_func():
         else:
             return "Afraid"
 
+    # Add Categorical Predictions to the Prediction Results DataFrame
     prediction_results_df["Snake Phobia"] = [prediction_translator(i) for i in snakes_prediction]
 
+    # Return an Array of Prediction Results
     return print(f"Predicted Fear of Snakes: {[prediction_translator(i) for i in snakes_prediction]}")
 
     
 
 
-
+# Create a Spiders Function to Run the Spiders Logistic Regression Model
 def spiders_func():
 
     # Define the Features (X) and to be Used in the Model
@@ -92,12 +99,14 @@ def spiders_func():
     # Use Model to Predict Target
     spiders_prediction = spiders_model.predict(X_scaled)
 
+    # Add Categorical Predictions to the Prediction Results DataFrame
     prediction_results_df["Spider Phobia"] = spiders_prediction
 
+    # Return an Array of Prediction Results
     return print(f"Predicted Fear of Spiders: {spiders_prediction}")
 
     
-
+# Create a Heights Function to Run the Heights K Nearest Neighbors Model
 def heights_func():
 
     # Define the Features (X) to be Used in the Model
@@ -109,12 +118,14 @@ def heights_func():
     # Use Model to Predict Target
     heights_prediction = heights_model.predict(X)
 
+    # Add Categorical Predictions to the Prediction Results DataFrame
     prediction_results_df["Heights Phobia"] = heights_prediction
 
+    # Return an Array of Prediction Results
     return print(f"Predicted Fear of Heights: {heights_prediction}")
 
 
-
+# Create an Education Function to Run the Education K Nearest Neighbors Model
 def education_func():
 
     # Define the Features (X) and to be Used in the Model
@@ -126,12 +137,14 @@ def education_func():
     # Use Model to Predict Target
     education_prediction = education_model.predict(X)
 
+    # Add Categorical Predictions to the Prediction Results DataFrame
     prediction_results_df["Education Level"] = education_prediction
 
+    # Return an Array of Prediction Results
     return print(f"Predicted Education Level: {education_prediction}")
 
 
-
+# Create a Gender Function to Run the Gender K Nearest Neighbors Model
 def gender_func():
 
     # Define the Features (X) and to be Used in the Model
@@ -143,16 +156,22 @@ def gender_func():
     # Use Model to Predict Target
     gender_prediction = gender_model.predict(X)
 
+    # Add Categorical Predictions to the Prediction Results DataFrame
     prediction_results_df["Gender"] = gender_prediction
 
+    # Return an Array of Prediction Results
     return print(f"Predicted Gender: {gender_prediction}")
 
 
-
+# Run All of the Previously Defined Functions
 snakes_func()
 spiders_func()
 heights_func()
 education_func()
 gender_func()
 
+# Print the Prediction Results DataFrame
 print(prediction_results_df)
+
+# Save the Prediction Results DataFrame to a CSV File
+prediction_results_df.to_csv("Data/prediction_results.csv", header=True, index=False)
