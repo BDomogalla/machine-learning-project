@@ -1,4 +1,4 @@
-# [Project Title]
+# [Machine Learning Project]
 
 Projekt strojového učenia
 
